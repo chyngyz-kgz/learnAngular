@@ -1,0 +1,13 @@
+.products{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card{
+    margin-bottom: 4vh;
+}
+
+button{
+    margin-bottom: 4vh;
+}

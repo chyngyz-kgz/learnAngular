@@ -1,0 +1,30 @@
+<h4>Angebote</h4>
+<button class="btn btn-danger" (click)="isAdding = !isAdding">Add new products</button>
+
+<form *ngIf="isAdding"
+    (submit)="addNewProduct(newProductTitle.value,newProductDescription.value,newProductImage.value,+newProductPrice.value)">
+    <div class="form-group">
+        <label>Product adding</label>
+        <br>
+        <input id="newProductTitle" type="text" class="form-control" placeholder="Title" #newProductTitle>
+        <br>
+        <input id="newProductDescription" type="text" class="form-control" placeholder="Description"
+            #newProductDescription>
+        <br>
+        <input id="newProductImage" type="text" class="form-control" placeholder="Image" #newProductImage>
+        <br>
+        <input id="newProductPrice" type="number" class="form-control" placeholder="Price" #newProductPrice>
+        <br>
+        <button type="submit" class="btn btn-danger">Add & Save products</button>
+    </div>
+</form>
+<div class="products">
+    <div class="card" style="width: 18rem;" *ngFor="let elem of productsArr">
+        <img class="card-img-center" src={{elem.image}} alt={{elem.title}}>
+        <div class="card-body">
+            <h5 class="card-title">{{elem.title}}</h5>
+            <span class="card-text">{{elem.description}}</span>
+            <h5 class="card-title">Preis: <strong>{{elem.price}}</strong></h5>
+        </div>
+    </div>
+</div>
